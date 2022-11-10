@@ -1,27 +1,3 @@
-using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.XR.Interaction.Toolkit;
-
-public class TeleportationLineActivator : MonoBehaviour
-{
-    [SerializeField] private XRInteractorLineVisual lineVisual;
-    [SerializeField] private InputActionProperty startTeleportAction;
-
-    private void Awake()
-    {
-        if (lineVisual == null) lineVisual = GetComponent<XRInteractorLineVisual>();
-    }
-
-    private void Start()
-    {
-        startTeleportAction.action.started += _ => ShowTeleport(true);
-        startTeleportAction.action.canceled += _ => ShowTeleport(false);
-        ShowTeleport(false);
-    }
-
-    private void ShowTeleport(bool active)
-    {
-        lineVisual.enabled = active;
-        lineVisual.reticle.SetActive(active);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:db1a398950db448d0dc7df99a626b50ed6cd6ea171ac9b5bf7ad5be60317da9a
+size 413

@@ -1,7 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!1386491679 &1
-PresetManager:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_DefaultPresets: {}
+version https://git-lfs.github.com/spec/v1
+oid sha256:71f03b9da670660d575239d6d369f3b172a9f317b6f9c7309cb7139803673183
+size 463
