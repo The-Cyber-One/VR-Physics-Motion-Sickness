@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bc3a8d4c43405a6caeb4a8a122397472d7fd60c894681cb6372a3133500b52b1
-size 528
+﻿using UnityEngine;
+
+public abstract class PhysicsEnabler : MonoBehaviour
+{
+    protected PhysicsSettings Settings => PhysicsManager.Instance.Settings;
+
+    private void OnEnable()
+    {
+        Settings.OnSettingsChanged += OnSettingsChanged;
+        OnSettingsChanged();
+    }
+
+    private void OnDisable()
+    {
+        Settings.OnSettingsChanged -= OnSettingsChanged;
+    }
+
+    /// <summary>
+    /// Gets called OnEnable and when a setting has changed
+    /// </summary>
+    protected abstract void OnSettingsChanged();
+}

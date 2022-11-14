@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c0b92f8b2f326630c6c8634dd04edc7a768757cc9b5e90538fec16728ed9adc
-size 496
+﻿using System;
+using System.Collections.Generic;
+
+namespace Assets.Scripts
+{
+    public static class Extensions
+    {
+        private static Random rand = new Random();
+
+        public static void Shuffle<T>(this IList<T> values)
+        {
+            for (int i = values.Count - 1; i > 0; i--)
+            {
+                int k = rand.Next(i + 1);
+                T value = values[k];
+                values[k] = values[i];
+                values[i] = value;
+            }
+        }
+    }
+}

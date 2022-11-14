@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a2a4d9518fbc5f34bea42bf896c39ffa36c92c3dcfc58151529f45cf8af0e7b6
-size 719
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[RequireComponent(typeof(Animator), typeof(Rigidbody))]
+public class AnimationEnabler : PhysicsEnabler
+{
+    [SerializeField] private Animator animator;
+    [SerializeField] private Rigidbody body;
+
+    [ContextMenu("Validate")]
+    private void OnValidate()
+    {
+        if (animator == null) animator = GetComponent<Animator>();
+        if (body == null) body = GetComponent<Rigidbody>();
+    }
+
+    private void Awake()
+    {
+        OnValidate();
+    }
+
+    protected override void OnSettingsChanged()
+    {
+        animator.enabled = !Settings.UseObjectInteraction;
+        body.isKinematic = !Settings.UseObjectInteraction;
+    }
+}

@@ -1,3 +1,48 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dd80da15c32745550a4d48705de788579ed3c45610efeba1900d3a11aecb26eb
-size 1341
+using System;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "Physics Settings", menuName = "CustomSettings")]
+public class PhysicsSettings : ScriptableObject
+{
+    private bool _usesPhysics;
+    public bool UsePhysics = false;
+    public bool UseSmoothLocomotion = false;
+    public bool UseJumping = false;
+    public bool UseObjectInteraction = false;
+    public float MassMinimumForPhysics = 1f;
+    public float PlayerStrength = 10f;
+
+    /// <summary>
+    /// Gets called OnEnable and when a setting has changed
+    /// </summary>
+    public event Action OnSettingsChanged;
+
+    private void OnValidate()
+    {
+        if (_usesPhysics != UsePhysics)
+        {
+            foreach (var field in GetType().GetFields())
+            {
+                if (field.FieldType == typeof(bool))
+                {
+                    field.SetValue(this, UsePhysics);
+                }
+            }
+        }
+        else
+        {
+            UsePhysics = true;
+            foreach (var field in GetType().GetFields())
+            {
+                if (field.IsPublic && field.FieldType == typeof(bool) && !(bool)field.GetValue(this))
+                {
+                    UsePhysics = false;
+                    break;
+                }
+            }
+        }
+        _usesPhysics = UsePhysics;
+
+        OnSettingsChanged?.Invoke();
+    }
+}
