@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb4243afb7085a5409f2c8bb6dcf635c, type: 3}
   m_Name: Physics Settings
   m_EditorClassIdentifier: 
-  UsePhysics: 1
-  UseSmoothLocomotion: 1
+  UsePhysics: 0
+  UseSmoothLocomotion: 0
   UseJumping: 1
   UseObjectInteraction: 1
+  UsePushableBody: 1
   MassMinimumForPhysics: 1
   PlayerStrength: 10

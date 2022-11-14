@@ -12,4 +12,10 @@ public class TeleportationLineActivator : MonoBehaviour
     {
         leftTeleportation.SetActive(leftAction.action.ReadValue<Vector2>().y > deadzone);
     }
+
+    public void SetActive(bool value)
+    {
+        leftTeleportation.SetActive(false);
+        enabled = value;
+    }
 }

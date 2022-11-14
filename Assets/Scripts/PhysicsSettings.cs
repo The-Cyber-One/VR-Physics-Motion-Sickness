@@ -5,10 +5,11 @@ using UnityEngine;
 public class PhysicsSettings : ScriptableObject
 {
     private bool _usesPhysics;
-    public bool UsePhysics = false;
-    public bool UseSmoothLocomotion = false;
-    public bool UseJumping = false;
-    public bool UseObjectInteraction = false;
+    public bool UsePhysics;
+    public bool UseSmoothLocomotion;
+    public bool UseJumping;
+    public bool UseObjectInteraction;
+    public bool UsePushableBody;
     public float MassMinimumForPhysics = 1f;
     public float PlayerStrength = 10f;
 

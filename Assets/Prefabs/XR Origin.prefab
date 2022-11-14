@@ -1772,8 +1772,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c68d84ae52e450419a68874a4d47ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterController: {fileID: 257792752464668375}
-  groundDistance: 0.1
+  rigidbody: {fileID: 0}
+  rigidbodyCollider: {fileID: 0}
+  walkAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 725933ad-6ea3-499d-a69b-c67bffbbc400
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  head: {fileID: 0}
+  walkSpeed: 1
   jumpAction:
     m_UseReference: 1
     m_Action:
@@ -1787,8 +1801,11 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -6951800098251686745, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
-  jumpTime: 0.2
-  jumpVelocity: {x: 0, y: 50, z: 0}
+  groundDistance: 0.1
+  jumpVelocity: 1
+  floor:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &257792751528595655
 PrefabInstance:
   m_ObjectHideFlags: 0
