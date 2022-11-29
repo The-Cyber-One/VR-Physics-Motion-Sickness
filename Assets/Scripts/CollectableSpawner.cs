@@ -14,19 +14,19 @@ public class CollectableSpawner : MonoBehaviour
     [ContextMenu("Validate")]
     private void OnValidate()
     {
-        room1.Clear();
-        room2.Clear();
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            var child = transform.GetChild(i);
-            if (child.name.Contains("Room 1"))
-                room1.Add(child.transform);
-            else
-                room2.Add(child.transform);
-        }
+        //room1.Clear();
+        //room2.Clear();
+        //for (int i = 0; i < transform.childCount; i++)
+        //{
+        //    var child = transform.GetChild(i);
+        //    if (child.name.Contains("Room 1"))
+        //        room1.Add(child.transform);
+        //    else
+        //        room2.Add(child.transform);
+        //}
 
-        room1Amount = Math.Clamp(room1Amount, 0, room1.Count);
-        room2Amount = Math.Clamp(room2Amount, 0, room2.Count);
+        //room1Amount = Math.Clamp(room1Amount, 0, room1.Count);
+        //room2Amount = Math.Clamp(room2Amount, 0, room2.Count);
     }
 
     private void Start()

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Physics Settings
   m_EditorClassIdentifier: 
   UsePhysics: 0
-  UseSmoothLocomotion: 0
-  UseJumping: 1
+  UseSmoothLocomotion: 1
+  UseJumping: 0
   UseObjectInteraction: 1
-  UsePushableBody: 1
+  UsePushableBody: 0
   MassMinimumForPhysics: 1
   PlayerStrength: 10
